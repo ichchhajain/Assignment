@@ -18,8 +18,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { EditStudentComponent } from './edit-student/edit-student.component';
 @NgModule({
-  declarations: [AppComponent, StudentDetailComponent, StudentTableComponent],
+  declarations: [AppComponent, StudentDetailComponent, StudentTableComponent, EditStudentComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

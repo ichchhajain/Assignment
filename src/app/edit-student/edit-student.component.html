@@ -1,0 +1,102 @@
+<div class="container mt-5">
+  <h2 class="text-center">Edit Student Detail</h2>
+  <div class="text-right" style="cursor: pointer; color: blue">
+    <p routerLink="/studentTable">Student Table</p>
+  </div>
+  <mat-card class="mt-5">
+    <form [formGroup]="Student_form">
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Name</mat-label>
+            <input
+              matInput
+              placeholder="Name"
+              formControlName="name"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              placeholder="Email"
+              formControlName="email"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Select Gender</mat-label>
+            <mat-select formControlName="gender">
+              <mat-option *ngFor="let data of Gender" [value]="data">
+                {{ data }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Age</mat-label>
+            <input matInput placeholder="Age" formControlName="age" required />
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Phone no.</mat-label>
+            <input
+              matInput
+              placeholder="Phone no."
+              formControlName="phone"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Select Class</mat-label>
+            <mat-select formControlName="class">
+              <mat-option *ngFor="let class of classes" [value]="class">
+                {{ class }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Father's Name</mat-label>
+            <input
+              matInput
+              placeholder="Father's Name"
+              formControlName="father"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Mother's Name</mat-label>
+            <input
+              matInput
+              placeholder="Mother's Name"
+              formControlName="mother"
+              required
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <mat-card-actions class="text-center">
+        <button mat-raised-button color="accent" (click)="updateStudentData()">
+          Submit
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

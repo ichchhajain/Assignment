@@ -9,7 +9,9 @@ export class StudentDetailComponent implements OnInit {
   Student_form: FormGroup;
   Gender: string[] = ['Male', 'Female', 'Other'];
   classes: string[] = ['1', '2', '3', '4', '5', '6', '7', '8'];
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder) {}
+
+  ngOnInit(): void {
     this.Student_form = this.formBuilder.group({
       fname: [''],
       lname: [''],
@@ -20,6 +22,4 @@ export class StudentDetailComponent implements OnInit {
       mother: [''],
     });
   }
-
-  ngOnInit(): void {}
 }
