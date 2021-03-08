@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 0em 0 0em 0;
+  padding: 4px;
+}
+.mat-form-field-label-wrapper {
+  top: -1.4em;
+  padding-top: 0.844em;
+  font-size: 12px;
+}

@@ -1,0 +1,129 @@
+<div class="container mt-5">
+  <h2 class="text-center">Student Detail Form</h2>
+  <div class="text-right" style="cursor: pointer; color: blue">
+    <p routerLink="studentTable">Student Table</p>
+  </div>
+  <mat-card class="mt-5">
+    <form [formGroup]="Student_form">
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>First Name</mat-label>
+            <input
+              matInput
+              placeholder="First Name"
+              formControlName="fname"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Last Name</mat-label>
+            <input
+              matInput
+              placeholder="Last Name"
+              formControlName="lname"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              placeholder="Email"
+              formControlName="email"
+              required
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Date of Birth</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              placeholder="Date of Birth"
+              formControlName="dob"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Phone no.</mat-label>
+            <input
+              matInput
+              placeholder="Phone no."
+              formControlName="phone"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Select Class</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let class of classes" [value]="class">
+                {{ class }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <label id="example-radio-group-label">Select Gender</label>
+          <mat-radio-group
+            aria-labelledby="example-radio-group-label"
+            class="example-radio-group"
+          >
+            <mat-radio-button
+              class="example-radio-button"
+              *ngFor="let data of Gender"
+              [value]="data"
+            >
+              {{ data }}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Father's Name</mat-label>
+            <input
+              matInput
+              placeholder="Father's Name"
+              formControlName="father"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Mother's Name</mat-label>
+            <input
+              matInput
+              placeholder="Mother's Name"
+              formControlName="mother"
+              required
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="text-center">
+        <mat-checkbox class="example-margin">I Agree !!</mat-checkbox>
+      </div>
+      <mat-card-actions class="text-center">
+        <button mat-raised-button color="accent">Submit</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>
